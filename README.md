@@ -4,10 +4,10 @@
 **Please run this on a real host, hosting like replit or heroku are not good services for hosting. BUY A SERVER, VPN OR LOOK FOR FREE HOSTING WITHOUT A LIMIT.**
 
 Running:
+
 `tsc -b` or `npx tsc -b` if you do not have typescript installed.
 
 then
-
 `node .` or `node ./build/start.js`
 
 # Client Plugins
