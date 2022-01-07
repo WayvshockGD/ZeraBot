@@ -1,7 +1,7 @@
 # Zera => Norton Source
 
 # Running the bot
-**Please run this on a real host, hosting like replit or heroku are not good services for services. BUY A SERVER, VPN OR LOOK FOR FREE HOSTING WITHOUT A LIMIT.**
+**Please run this on a real host, hosting like replit or heroku are not good services for hosting. BUY A SERVER, VPN OR LOOK FOR FREE HOSTING WITHOUT A LIMIT.**
 
 Running:
 `tsc -b` or `npx tsc -b` if you do not have typescript installed.
