@@ -5,6 +5,9 @@
 
 Running:
 `tsc -b` or `npx tsc -b` if you do not have typescript installed.
+
+then
+
 `node .` or `node ./build/start.js`
 
 # Client Plugins
@@ -29,4 +32,5 @@ Red: `Error`
 
 # NPM Terminal Commands:
 `npm run lint`
+
 `npm start`
