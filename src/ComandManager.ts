@@ -3,7 +3,7 @@ import { glob } from "glob-promise";
 import { CommandDataOptions, PluginDataOptions } from "../types/CommandTypes";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export class CommandManager extends Collection<string, CommandDataOptions<any>> {
+export class CommandManager extends Collection<string, CommandDataOptions> {
     public plugins: Collection<string, PluginDataOptions>;
 
     public constructor() {
@@ -22,6 +22,8 @@ export class CommandManager extends Collection<string, CommandDataOptions<any>> 
                 for (let file of files) {
                     // eslint-disable-next-line @typescript-eslint/no-var-requires
                     let plugin: PluginDataOptions = require(`..${file.slice(7)}`);
+
+                    this.plugins.set(plugin.name, plugin);
                     
                     for (let command of plugin.commands) {
                         command.names.forEach(name => {

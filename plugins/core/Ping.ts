@@ -1,17 +1,24 @@
 import ms from "ms";
 import { createCommand } from "../CommandBuilder";
 
-type Names = "ping" | "ms" | "wsping";
-
-export = createCommand<Names>({
+export = createCommand({
     names: ["ping", "ms", "wsping"],
     description: [],
     run(ctx) {
+        let now = Date.now();
+
         ctx.respond("Pinging...").then((message) => {
             if (typeof message === "object") {
-                setTimeout(() => {
-                    message.edit(`Shard ping: \`${ctx.shard.latency}\`, seconds: ${ms(ctx.shard.latency)}`);
-                }, ms("1s"));
+                try {
+                    setTimeout(() => {
+                        let ts = typeof message.editedTimestamp === "undefined" ? 0 : message.editedTimestamp;
+                        let diff = (Date.now() - now) - ts;
+                        message.edit(`Shard ping: \`${diff}\`, seconds: ${ms(diff)}`);
+                    }, ms("60ms"));
+                } catch (err) {
+                    let error: Error = err as Error;
+                    ctx.respond(`Unable to edit message \`${error.message}\``);
+                }
             } else {
                 ctx.respond("Had trouble while editing.");
             }

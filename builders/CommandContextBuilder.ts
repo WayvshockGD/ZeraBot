@@ -1,7 +1,7 @@
 import Eris from "eris";
 import UtilityManager from "../src/UtilityManager";
 import { Plugins } from "../start";
-import NortonBuilder from "./NortonBuilder";
+import ZeraBuilder from "./ZeraBuilder";
 
 export class CommandContextBuilder {
     private data: CommandContextBuilderOptions;
@@ -41,12 +41,16 @@ export class CommandContextBuilder {
         return (<Eris.GuildChannel>this.channel).guild;
     }
 
-    get norton() {
+    get zera() {
         return this.data.client;
     }
 
     get commands() {
         return this.client.commands;
+    }
+
+    get clientPlugins() {
+        return this.client.plugins;
     }
 
     get plugins() {
@@ -57,5 +61,5 @@ export class CommandContextBuilder {
 export interface CommandContextBuilderOptions {
     message: Eris.Message;
     args: string[];
-    client: NortonBuilder<Plugins>;
+    client: ZeraBuilder<Plugins>;
 }

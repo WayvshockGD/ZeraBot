@@ -6,11 +6,11 @@ export interface PluginDataOptions {
     enabled: boolean;
     canBeTurnedOff?: boolean;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    commands: CommandDataOptions<any>[];
+    commands: CommandDataOptions[];
 }
 
-export interface CommandDataOptions<T> {
-    names: string[] | T[];
+export interface CommandDataOptions {
+    names: string[];
     description: string[];
     enabled?: boolean;
     run(ctx: CommandContextBuilder): void;

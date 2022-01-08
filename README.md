@@ -1,5 +1,3 @@
-# Zera => Norton Source
-
 # Running the bot
 **Please run this on a real host, hosting like replit or heroku are not good services for hosting. BUY A SERVER, VPN OR LOOK FOR FREE HOSTING WITHOUT A LIMIT.**
 
@@ -22,7 +20,7 @@ interface Plugins {
     whatever: WhateverPlugin;
 }
 ```
-It will show when doing `client.plugins.whatever` or `ctx.norton.plugins.whatever` if its a command.
+It will show when doing `client.plugins.whatever` or `ctx.zera.plugins.whatever` if its a command.
 
 # Color codes
 Green: `Success`

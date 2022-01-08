@@ -1,9 +1,11 @@
-import { CommandDataOptions, PluginDataOptions } from "../types/CommandTypes";
+import {CommandDataOptions, PluginDataOptions} from "../types/CommandTypes";
 
 export function createPlugin(options: PluginDataOptions) {
+    if (!options.canBeTurnedOff) options.canBeTurnedOff = true;
     return options;
 }
 
-export function createCommand<T>(options: CommandDataOptions<T>) {
+export function createCommand(options: CommandDataOptions) {
+    if (typeof options.enabled === "undefined") options.enabled = true;
     return options;
 }

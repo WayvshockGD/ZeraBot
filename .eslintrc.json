@@ -18,6 +18,10 @@
     ],
     "rules": {
         "prefer-const": "off",
-        "brace-style": "warn"
+        "brace-style": "warn",
+        "capitalized-comments": "warn",
+        "spaced-comment": "error",
+        "no-multi-spaces": "error",
+        "no-self-compare": "error"
     }
 }
